@@ -1,18 +1,13 @@
 import React, { useState } from "react";
 import { Input, Button } from "antd";
+import Task from "./Task";
 
-interface Task {
-    id: number;
-    description: String;
-    done: boolean;
-
-}
 
 const TaskList: React.FC = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [newTask, setNewTask] = useState<string>('');
 
-    const addTask = () => {
+    const addTask = (): void => {
         if(newTask.trim() !== ''){
             setTasks([...tasks, { id: Date.now(), description: newTask, done: false }]);
             setNewTask('');
