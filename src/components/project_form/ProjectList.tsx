@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "antd";
 import Project from "./IProject.ts";
 import ProjectInput from "./ProjectInput.tsx";
 
 const ProjectList: React.FC = () => {
     const [listProject, setListProject] = useState<Project[]>([]);
+
+
+    useEffect(() => {
+        debugger
+        console.log(listProject)
+    }, [listProject])
     let count: number = 0;
     
     return ( 
