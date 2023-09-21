@@ -1,11 +1,11 @@
 import Characters from "./Characters";
 import { useState } from "react";
-import { disableExperimentalFragmentVariables, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "../../queries";
 
 const Index = () => {
 
-    const [dataGql, setDataGql] = useState<Object[]>([])
+    const [dataGql, setDataGql] = useState<any>([])
 
     const { loading } = useQuery(GET_CHARACTERS, {
         onCompleted: (data) => {
@@ -27,7 +27,6 @@ const Index = () => {
 
     return ( 
         <>
-            <p></p>
             <Characters dataGql={dataGql} />
         </>
      );
