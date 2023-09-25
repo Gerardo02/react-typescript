@@ -1,10 +1,18 @@
 import './App.css'
 import { Card } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import useLocalStorage from './hooks/useLocalStorage'
+import { useState } from 'react'
 
 function App() {
 
+  const [name, setName] = useLocalStorage('name', '')
+  const [count, setCount] = useLocalStorage('counter', 0)
+
+  const [counter, setCounter] = useState(0)
+
   const navigate = useNavigate()
+  
 
 
   const gridStyle: React.CSSProperties = {
@@ -23,6 +31,14 @@ function App() {
 
 
       </Card>
+
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+      <button onClick={() => setCounter(counter + 1)}>{counter}</button>
+      <button onClick={() => setName('Pedro Juarez')}>Nombres</button>
+      <ul>
+        <li>{name}</li>
+      </ul>
+      
     </>
   )
 }
