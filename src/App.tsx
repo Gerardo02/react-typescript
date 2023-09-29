@@ -28,6 +28,7 @@ function App() {
         <Card.Grid style={gridStyle} onClick={() => navigate('/modal')}>Modal</Card.Grid>
         <Card.Grid style={gridStyle} onClick={() => navigate('/task')}>Task</Card.Grid>
         <Card.Grid style={gridStyle} onClick={() => navigate('/characters')}>Characters</Card.Grid>
+        <Card.Grid style={gridStyle} onClick={() => navigate('/todos')}>Todos</Card.Grid>
 
 
       </Card>
